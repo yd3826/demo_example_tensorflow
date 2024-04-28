@@ -158,26 +158,15 @@ class ECG_DataSET():
 
         csvdata_all = loadCSV(os.path.join(self.indice_dir, mode + '_indice.csv'))
 
-        # for label, filenames in csvdata_all.items():
-        #
-        #     for filename in filenames:
-        #         if subject_id is not None and filename.startswith(subject_id):
-        #             full_path = os.path.join(root_dir, filename)
-        #             self.names_list.extend([])
-        #         elif subject_id is None:
-        #             full_path = os.path.join(root_dir, filename)
-        #             self.names_list.append((full_path, int(label)))
-        #         print()
-
         for i, (k, v) in enumerate(csvdata_all.items()):
             full_path = os.path.join(root_dir, k)
             # Check if the subject ID matches
             if subject_id is not None and k.startswith(subject_id):
                 self.names_list.extend([(full_path, int(v[0]))])
-                print()
+                # print()
             elif subject_id is None:
                 self.names_list.append((full_path, int(v[0])))
-                print()
+                # print()
 
     def __len__(self):
         return len(self.names_list)
