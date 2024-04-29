@@ -105,7 +105,7 @@ def main():
     proportion_above_threshold = subjects_above_threshold / len(subjects)
     print("G Score:", proportion_above_threshold)
 
-    with open(path_records + 'seg_stat.txt', 'a') as f:
+    with open(path_records + 'seg_stat.txt', 'w') as f:
         f.write(f"Final F-1: {avg_f1:.5f}\n")
         f.write(f"Final F-B: {avg_fb:.5f}\n")
         f.write(f"Final SEN: {avg_se:.5f}\n")
