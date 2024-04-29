@@ -1,6 +1,7 @@
 import csv, os
 import numpy as np
 import tensorflow as tf
+from random import shuffle
 
 def ACC(mylist):
     tp, fn, fp, tn = mylist[0], mylist[1], mylist[2], mylist[3]
@@ -163,10 +164,13 @@ class ECG_DataSET():
             # Check if the subject ID matches
             if subject_id is not None and k.startswith(subject_id):
                 self.names_list.extend([(full_path, int(v[0]))])
-                # print()
+                print()
             elif subject_id is None:
                 self.names_list.append((full_path, int(v[0])))
-                # print()
+                print()
+        if subject_id is None:
+            shuffle(self.names_list)
+        print()
 
     def __len__(self):
         return len(self.names_list)

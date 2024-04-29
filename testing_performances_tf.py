@@ -42,7 +42,7 @@ def main():
     print(subjects)
     test_counter = 0
     for subject_id in subjects:
-        # print(subject_id)
+        print(subject_id)
         testset = ECG_DataSET(root_dir=path_data,
                                indice_dir=path_indices,
                                mode='test',
