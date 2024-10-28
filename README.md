@@ -1,4 +1,4 @@
-# Tensorflow example code for the ACM/IEEE Intelligent Embedded System Design Contest at ICMC 2024
+# Tensorflow example code for AF_Detection.
 
 ## What's in this repository?
 
